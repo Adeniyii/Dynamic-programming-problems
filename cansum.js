@@ -1,11 +1,14 @@
 /**
  * Solving a canSum problem using recursion and tabulation
- * and optimizing using memoization
+ * and optimizing using memoization.
  * 
+ * Problem: Return true if the target can be generated using 
+ * any combination of the numbers in the arr array.
  * 
- * m = sum
+ * Variables
+ * m = target
  * n = arr
- * 
+ * memo = memoization object
  * 
  * Recursive
  * 
@@ -26,17 +29,17 @@
 
 
 // Main function -- Recursive
-const canSum = (sum, arr, memo = {}) => {
+const canSum = (target, arr, memo = {}) => {
 
     // Base case
-    if (sum === 0) return true;
-    if (sum < 0) return false;
-    if (sum in memo) return memo[sum];
+    if (target === 0) return true;
+    if (target < 0) return false;
+    if (target in memo) return memo[target];
 
     // Recursive case for each num in arr
     for (let num of arr){
 
-        const remainder = sum - num;
+        const remainder = target - num;
 
         // Store memo if not exists -- recursive case
         memo[remainder] = canSum(remainder, arr, memo);
