@@ -3,10 +3,12 @@
  * using recursion and tabulation and optimizing with memoization.
  * This particular problem cannot be optimized past an exponential time complexity.
  * 
+ * Problem: Return a 2-d array representing all the possible combinations
+ * that can generate the target word.
+ * 
  * 
  * m = target
  * n = words
- * 
  * 
  * Recursion
  * 
@@ -21,12 +23,12 @@
  * 
  * Tabulation
  * 
- * time: O(n^m)
- * space: O(n^m)
+ * time: O(n^m) exponential
+ * space: O(n^m) exponential
  */
 
 
-// Main program -- Recursive
+// Main program -- Recursion
 const allConstruct = (target, words, memo = {}) => {
     // Base case
     if (target === '') return [[]];

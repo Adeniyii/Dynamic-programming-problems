@@ -2,23 +2,25 @@
  * Solving a fibanacci sequence problem using recursion and tabulation
  * and optimizing using memoization
  * 
+ * Problem: Return the nth number of the fibonacci sequence.
+ * 
  * 
  * Recursive
  * 
  * Brute force
- * time: O(2^n)
- * space: O(n)
+ * time: O(2^n) exponential
+ * space: O(n) linear
  * 
  * Memoized
- * time: O(n)
- * space: O(n)
+ * time: O(n) linear
+ * space: O(n) linear
  * 
  * 
  * 
  * Tabulated
  * 
- * time: O(n)
- * space: O(n)
+ * time: O(n) linear
+ * space: O(n) linear
 */
 
 

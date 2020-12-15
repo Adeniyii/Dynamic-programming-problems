@@ -3,33 +3,33 @@
  * and optimizing using memoization.
  * 
  * Problem: Return true if the target can be generated using 
- * any combination of the numbers in the arr array.
+ * any combination of the numbers in the nums array.
  * 
- * Variables
+ * 
  * m = target
- * n = arr
+ * n = nums
  * memo = memoization object
  * 
  * Recursive
  * 
  * Brute force
- * time: O(n^m)
- * space: O(m)
+ * time: O(n^m) exponential
+ * space: O(m) linear
  * 
  * memoized
- * time: O(n*m)
- * space: O(m)
+ * time: O(n*m) polynomial
+ * space: O(m) linear
  * 
  * 
  * Tabulated
  * 
- * time: O(m*n)
- * space: O(m)
+ * time: O(m*n) polynomial
+ * space: O(m) linear
  */
 
 
 // Main function -- Recursive
-const canSum = (target, arr, memo = {}) => {
+const canSum = (target, nums, memo = {}) => {
 
     // Base case
     if (target === 0) return true;
@@ -37,12 +37,12 @@ const canSum = (target, arr, memo = {}) => {
     if (target in memo) return memo[target];
 
     // Recursive case for each num in arr
-    for (let num of arr){
+    for (let num of nums){
 
         const remainder = target - num;
 
         // Store memo if not exists -- recursive case
-        memo[remainder] = canSum(remainder, arr, memo);
+        memo[remainder] = canSum(remainder, nums, memo);
 
         if (memo[remainder] === true) return true;
     }

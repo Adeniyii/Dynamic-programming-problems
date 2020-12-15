@@ -2,26 +2,28 @@
  * Solving a countConstruct problem using recursion and tabulation
  * and optimizing using memoization
  * 
+ * Problem: Return the number of ways the target word can be generated
+ * using combinations from the words array.
+ * 
  * 
  * m = target
  * n = words
  * 
- * 
  * Recursion
  * 
  * Brute force
- * time: O(n^m * m)
- * space: O(m^2)
- * 
+ * time: O(n^m * m) exponential
+ * space: O(m^2) quadratic
  * 
  * Memoized
- * time: O(m^2 * n)
- * space: O(m^2)
+ * time: O(m^2 * n) polynomial
+ * space: O(m^2) quadratic
  * 
  * 
  * Tabulation
- * time: O(m^2 * n)
- * space: O(m)
+ * 
+ * time: O(m^2 * n) polynomial
+ * space: O(m) linear
  */
 
 

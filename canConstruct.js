@@ -2,6 +2,9 @@
  * Solve a canConstruct problem using recursion and tabulation
  * and optimize using memoization.
  * 
+ * Problem: Return true if the target can be generated using a 
+ * combination of words from the words array, else return false.
+ * 
  * 
  * m = target
  * n = words
@@ -12,7 +15,6 @@
  * time: O(n^m * m) exponential
  * space: O(m^2) quadratic
  * 
- * 
  * Memoized
  * time: O(m^2 * n) polynomial
  * space: O(m^2) quadratic
@@ -21,10 +23,10 @@
  * Tabulated
  * 
  * time: O(n*m^2) polynomial
- * space: O(m)
+ * space: O(m) linear
  */
 
-// Main function
+// Main function -- Recursion
 const canConstruct = (target, words, memo = {}) => {
     // Base cases
     if (target === '')return true;
@@ -49,7 +51,7 @@ const canConstruct = (target, words, memo = {}) => {
 }
 
 /* 
-// Main program
+// Main program -- Tabulation
 const canConstruct = (target, words) => {
     // Create and fill table
     const table = Array(target.length + 1).fill(false);

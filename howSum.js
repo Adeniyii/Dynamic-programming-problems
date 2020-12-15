@@ -2,21 +2,33 @@
  * Solving a howSum problem using recursion
  * and optimizing using memoization
  * 
+ * Problem: Return an array of any combination of numbers from the nums array
+ * that adds up to the target number, else return null.
+ * 
+ * 
  * m = target
- * n = arr length
+ * n = nums
+ * memo = memoization object
+ * 
+ * Recursive
  * 
  * Brute force
- * time: O(n^m * m)
- * space: O(m)
+ * time: O(n^m * m) exponential
+ * space: O(m) linear
  * 
  * Memoized
- * time: O(n*m^2)
- * space: O(m^2)
+ * time: O(n * m^2) polynomial
+ * space: O(m^2) quadratic
+ * 
+ * 
+ * Tabulated
+ * time: O(n * m^2) polynomial
+ * space: O(m^2) quadratic
  */
 
 
-// Main function
-const howSum = (target, arr, memo = {}) => {
+// Main function -- Recursion
+const howSum = (target, nums, memo = {}) => {
 
     // Base cases
     if (target === 0) return [];
@@ -24,9 +36,9 @@ const howSum = (target, arr, memo = {}) => {
     if (target in memo) return memo[target];
 
     // Recursive case
-    for (let n of arr){
+    for (let n of nums){
         const remainder = target - n;
-        const returnVal = howSum(remainder, arr, memo);
+        const returnVal = howSum(remainder, nums, memo);
 
         if (returnVal !== null){
             memo[target] = returnVal;

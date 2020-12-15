@@ -1,41 +1,44 @@
 /**
- * Solving a bestSum problem using recursion
+ * Solving a bestSum problem using recursion and tabulation
  * and optimizing using memoization
+ * 
+ * Problem: Return array containing the shortest combination
+ * of numbers from the nums array that adds up to the target number
  * 
  * 
  * m = target
- * n = arr
- * 
+ * n = nums
  * 
  * Recursive
  * 
  * Brute force
- * time: O(n^m * m)
- * space: O(m^2)
+ * time: O(n^m * m) exponential
+ * space: O(m^2) quadratic
  * 
  * Memoized
- * time: O(n*m^2)
- * space: O(m^2)
+ * time: O(n*m^2) polynomial
+ * space: O(m^2) quadratic
  * 
  * 
  * Tabulated
- * time: O(n*m^2)
- * space: O(m^2)
+ * 
+ * time: O(n*m^2) polynomial
+ * space: O(m^2) quadratic
  * 
  */
 
 
-//  Main function -- Recursive
-const bestSum = (target, arr, memo = {}) => {
+//  Main function -- Recursion
+const bestSum = (target, nums, memo = {}) => {
     if (target === 0) return [];
     if (target <= 0) return null;
     if (target in memo) return memo[target];
 
     let shortestCombo = null;
 
-    for (let n of arr){
+    for (let n of nums){
         const remainder = target - n;
-        const result = bestSum(remainder, arr, memo);
+        const result = bestSum(remainder, nums, memo);
 
         if (result !== null){
             const combination = [...result, n];
@@ -49,7 +52,7 @@ const bestSum = (target, arr, memo = {}) => {
 }
 
 
-// Main program
+// Main program -- Tabulation
 /*
 const bestSum = (target, nums) => {
 

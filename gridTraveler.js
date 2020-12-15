@@ -2,23 +2,31 @@
  * Solving a grid traveller problem using recursion and tabulation
  * and optimizing using memoization
  * 
+ * Problem: Return the number of ways you can traverse a m * n grid
+ * from the top left corner to the bottom right by moving either forward or downward.
+ * 
+ * 
+ * Variables
+ * m = no of rows
+ * n = no of columns
+ * 
  * 
  * Recursve
  * 
  * Brute force
- * time: O(2^(n+m))
- * space: O(n+m)
+ * time: O(2^(n+m)) exponential
+ * space: O(n+m) linear
  * 
  * Memoized
- * time: O(n*m)
- * space: O(n+m)
+ * time: O(n*m) polynomial
+ * space: O(n+m) linear
  * 
  * 
  * 
  * Tabulated
  * 
- * time: O(n*m)
- * space: O(n*m)
+ * time: O(n*m) polynomial
+ * space: O(n*m) linear
  */
 
 
