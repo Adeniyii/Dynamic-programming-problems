@@ -1,0 +1,7 @@
+{
+    "python.pythonPath": "C:\\Users\\DELL INSPIRON 15\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": false,
+    "python.linting.pylintEnabled": true,
+    "python.linting.mypyEnabled": false
+}
